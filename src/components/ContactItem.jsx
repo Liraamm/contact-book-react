@@ -34,6 +34,7 @@ const ContactItem = ({ item, deleteContact, changeStatus }) => {
         onClick={() => {
           deleteContact(item.id);
         }}
+        cursor="pointer"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
