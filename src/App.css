@@ -2,37 +2,122 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #1a1a1a;
+  font-family: "Ysabeau SC", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.checkbox-wrapper-57 input[type="checkbox"] {
+  visibility: hidden;
+  display: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.checkbox-wrapper-57 *,
+.checkbox-wrapper-57 ::after,
+.checkbox-wrapper-57 ::before {
+  box-sizing: border-box;
 }
 
-.App-link {
-  color: #61dafb;
+.checkbox-wrapper-57 .container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 25px;
+  user-select: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Create a custom checkbox */
+.checkbox-wrapper-57 .checkmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 1.3em;
+  width: 1.3em;
+  background: black;
+  border-radius: 50px;
+  transition: all 0.7s;
+  --spread: 20px;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-wrapper-57 .container input:checked ~ .checkmark {
+  background: black;
+  box-shadow: -10px -10px var(--spread) 0px #5b51d8,
+    0 -10px var(--spread) 0px #833ab4, 10px -10px var(--spread) 0px #e1306c,
+    10px 0 var(--spread) 0px #fd1d1d, 10px 10px var(--spread) 0px #f77737,
+    0 10px var(--spread) 0px #fcaf45, -10px 10px var(--spread) 0px #ffdc80;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkbox-wrapper-57 .checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-wrapper-57 .container input:checked ~ .checkmark::after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-wrapper-57 .container .checkmark::after {
+  left: 0.5em;
+  top: 0.34em;
+  width: 0.25em;
+  height: 0.5em;
+  border: solid #f0f0f0;
+  border-width: 0 0.15em 0.15em 0;
+  transform: rotate(45deg);
+}
+
+button {
+  position: relative;
+  display: inline-block;
+  margin: 15px;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #929292;
+  background: transparent;
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  border: 2px solid #929292;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 0 #929292;
+}
+
+button:hover {
+  color: rgb(250, 250, 250);
+  box-shadow: inset 0 -100px 0 0 #833ab4;
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+input {
+  position: relative;
+  display: inline-block;
+  margin: 15px;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 1px;
+  border-radius: 10px;
+}
+
+.completed {
+  border-radius: 20px;
+  background-color: #5b5b59;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100%);
+  opacity: var(0.7);
+  transition: opacity 0.3s;
+  border-radius: inherit;
 }
